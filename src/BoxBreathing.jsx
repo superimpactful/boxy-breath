@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 
 const PHASES = [
-  { label: "Inhale", duration: 5, color: "#009BDD" },
-  { label: "Hold", duration: 5, color: "#F00F28" },
-  { label: "Exhale", duration: 5, color: "#009BDD" },
-  { label: "Hold", duration: 5, color: "#F00F28" },
+  { label: "Inhale", duration: 4, color: "#009BDD" },
+  { label: "Hold", duration: 4, color: "#F00F28" },
+  { label: "Exhale", duration: 4, color: "#009BDD" },
+  { label: "Hold", duration: 4, color: "#F00F28" },
 ];
 
 const TOTAL_BREATHS = 10;
@@ -30,7 +30,7 @@ export default function BoxBreathing() {
   ];
 
   // Total ticks per full cycle
-  const cycleLength = PHASES.reduce((a, p) => a + p.duration, 0); // 20
+  const cycleLength = PHASES.reduce((a, p) => a + p.duration, 0); // 16
 
   // Dot position: travels around the box perimeter
   // Phase 0 (Inhale): top-left → top-right
@@ -135,7 +135,7 @@ export default function BoxBreathing() {
       >
         {running || done
           ? `Breath ${Math.min(breath, TOTAL_BREATHS)} of ${TOTAL_BREATHS}`
-          : `${TOTAL_BREATHS} breaths · 5 sec each phase`}
+          : `${TOTAL_BREATHS} breaths · 4 sec each phase`}
       </div>
 
       {/* SVG Box */}
